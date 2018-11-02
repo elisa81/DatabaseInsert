@@ -20,10 +20,11 @@ public class MyDBOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE awe_country (_id INTEGER PRIMARY KEY AUTOINCREMENT, country TEXT, city TEXT);");
-
+        db.execSQL("CREATE TABLE awe_country (pkid TEXT PRIMARY KEY, country TEXT, city TEXT);");
+        db.execSQL("CREATE TABLE awe_country_visitedcount (fkid TEXT);");
 
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
